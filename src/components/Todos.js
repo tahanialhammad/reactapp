@@ -17,14 +17,14 @@ class Todos extends Component {
       programmer: "Programming",
     };
 
-    const info ={
+    const infoObj ={
       name : "Tahani",
       job : "Programmer"
     }
 
     return (
       <div>
-        <h1
+        <h3
           style={{
             color: "red",
             fontSize: "40px",
@@ -32,14 +32,14 @@ class Todos extends Component {
           }}
         >
           React Todos with inline style
-        </h1>
+        </h3>
         <p style={style}> and internal style</p>
         <h2>
           {client === "Programmer" ? title_programmer : title_desibger}  is my life
         </h2>
         <p>Or with object {client === "Programmer" ? title.programmer : title.desibger} is my life </p>
-        <h2>Iam {info.name + " my job is " + info.job} </h2>
-        <h2>Or Iam {`${info.name}  my job is ${info.job}` } </h2>
+        <h3>Iam {infoObj.name + " my job is " + infoObj.job} </h3>
+        <h3>Or Iam {`${infoObj.name}  my job is ${infoObj.job}` } </h3>
       </div>
     );
   }
