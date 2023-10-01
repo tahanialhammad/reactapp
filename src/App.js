@@ -5,9 +5,17 @@ import Todos from "./components/Todos"
 import Social from './components/Social'
 import Team from "./components/Team";
 import Header from "./components/Header";
+import State from "./components/State";
+import TeamState from "./components/TeamState"
 
 // was class App extends React.Component {...}
 class App extends Component {
+  // constructor(){
+  //   super()
+  // }
+
+
+
   method(pram){
     return <h3>react method with: {pram}</h3>
   }
@@ -21,11 +29,13 @@ class App extends Component {
       <div>
         {/* props in class component */}
         <Header logo="React AppS" />
+        <State />
         <Team />
         <Todos />
         <Social />
         {reactMethod}
         {siteInfo}
+        <TeamState />
       </div>
     );
   }
