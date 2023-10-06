@@ -3,8 +3,9 @@ import React from "react";
 function SocialItem(props) {
         return (
             <div>
-                <h5>SocialItem {props.media}</h5>
-                <img src={props.img} alt={`icon of ${props.media}`}/>
+                <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <img src={props.img} width={'25px'} alt={`icon of ${props.media}`}/>
+                </a>
             </div>
         );
 }

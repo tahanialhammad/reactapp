@@ -17,7 +17,7 @@ function Team() {
     },
   ];
 
-  var temaMembers = teamInfo.map(member => <TeamMember 
+  const temaMembers = teamInfo.map(member => <TeamMember 
                                     key = {member.id}
                                     name ={member.name}
                                     img={member.img}
