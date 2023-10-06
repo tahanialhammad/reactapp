@@ -33,7 +33,6 @@ class App extends Component {
           <State />
           <Team />
           <Todos />
-          <Social />
           {reactMethod}
           {siteInfo}
           <TeamState />

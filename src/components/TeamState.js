@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import TeamMemberState from "./TeamMemberState";
 
+import teamInfoData from "./teamInfoData";
+
 class Team extends Component {
   constructor(){
     super()
     this.state = {
       // Object
-      teamInfo : [
-        { id: 1, name: "hashem", img: "https://picsum.photos/200", email: "hashem@yahoo.com", phone: "123", },
-        { id: 2, name: "tahani", img: "https://picsum.photos/201", email: "tahani@yahoo.com",},
-       ]
+      // teamInfo : [
+      //   { id: 1, name: "hashem", img: "https://picsum.photos/200", email: "hashem@yahoo.com", phone: "123", },
+      //   { id: 2, name: "tahani", img: "https://picsum.photos/201", email: "tahani@yahoo.com",},
+      //  ]
+       // from data
+       teamInfo : teamInfoData
     }
   }
 
