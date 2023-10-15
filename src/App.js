@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import State from "./components/State";
 import TeamState from "./components/TeamState";
 import Footer from "./components/Footer";
+import Event from "./components/Event";
 
 // was class App extends React.Component {...}
 class App extends Component {
@@ -36,6 +37,8 @@ class App extends Component {
           {reactMethod}
           {siteInfo}
           <TeamState />
+          <p>simple event listener</p>
+          <Event />
         </div>
 
         <Footer />
