@@ -1,7 +1,7 @@
 import React, { Component } from "react"; //use class component instead of function
 import logo from "./logo.svg"; //later i waint to use my logo
 import "./App.css";
-import Todos from "./components/Todos";
+import Test from "./components/Test";
 import Social from "./components/Social";
 import Team from "./components/Team";
 import Header from "./components/Header";
@@ -9,6 +9,9 @@ import State from "./components/State";
 import TeamState from "./components/TeamState";
 import Footer from "./components/Footer";
 import Event from "./components/Event";
+import Products from "./components/Products";
+import Counter from "./components/Counter";
+import Todo from "./components/Todo";
 
 // was class App extends React.Component {...}
 class App extends Component {
@@ -31,14 +34,18 @@ class App extends Component {
         <Header logo="React AppS" />
 
         <div class="container mx-auto">
+          <Products />
           <State />
           <Team />
-          <Todos />
+          <Test />
           {reactMethod}
           {siteInfo}
           <TeamState />
           <p>simple event listener</p>
+          <Counter />
           <Event />
+          {/* https://laracasts.com/series/beginning-react/episodes/3 */}
+          <Todo />
         </div>
 
         <Footer />

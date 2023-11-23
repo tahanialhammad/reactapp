@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Todos extends Component {
+class Test extends Component {
   render() {
     // style in jsx
     const style = {
@@ -31,7 +31,7 @@ class Todos extends Component {
             backgroundColor: "black",
           }}
         >
-          React Todos with inline style
+          React Test with inline style
         </h3>
         <p style={style}> and internal style</p>
         <h2>
@@ -45,4 +45,4 @@ class Todos extends Component {
   }
 }
 
-export default Todos;
+export default Test;
