@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Event from "./components/Event";
 import Products from "./components/Products";
 import Counter from "./components/Counter";
+import Todo from "./components/Todo";
 
 // was class App extends React.Component {...}
 class App extends Component {
@@ -43,6 +44,8 @@ class App extends Component {
           <p>simple event listener</p>
           <Counter />
           <Event />
+          {/* https://laracasts.com/series/beginning-react/episodes/3 */}
+          <Todo />
         </div>
 
         <Footer />
