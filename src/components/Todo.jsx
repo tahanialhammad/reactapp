@@ -59,6 +59,60 @@ function Todo() {
     setTodos([...todos].filter(todo => todo.id !== id));
   }
 
+  function completeTodo(id) {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.isComplete = !todo.isComplete;
+      }
+      // reteurn after the map
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  }
+
+  function markAsEditing(id) {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.isEditing = true;
+      }
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  }
+
+  function updateTodo(event, id) {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        // must be not empty 
+        if (event.target.value.trim().length === 0) {
+          todo.isEditing = false;
+          return todo;
+        }
+        todo.title = event.target.value;
+        todo.isEditing = false;
+      }
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  }
+
+  function cancelEdit(event, id) {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.isEditing = false;
+      }
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  }
+
   return (
     <div className="w-50 bg-gray-200">
       <div className="w-1/3">
@@ -77,14 +131,47 @@ function Todo() {
 
         <ul className="border border-gray-200 rounded overflow-hidden shadow-md">
           {todos.map((todo, index) => (
-            <li key={todo.id}  className="flex justify-between  px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">
+            <li
+              key={todo.id}
+              className="flex justify-between  px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out"
+            >
               <div className="">
-                <input type="checkbox" />
-                <span className="ml-4">{todo.title}</span>
-                {/* <input type="text" className="todo-item-input" value="Finish React Series" /> */}
+                <input
+                  type="checkbox"
+                  onChange={() => completeTodo(todo.id)}
+                  checked={todo.isComplete ? true : false}
+                />
+                {/* ther is more for editing todo in https://laracasts.com/series/beginning-react/episodes/5?autoplay=true */}
+
+                {!todo.isEditing ? (
+                  <span
+                  onDoubleClick={() => markAsEditing(todo.id)}
+                    className={`ml-4  ${todo.isComplete ? 'line-through' : ''}`}
+                  >
+                    {todo.title}
+                  </span>
+                ) : (
+                  <input
+                    type="text"
+                    onBlur={event => updateTodo(event, todo.id)}
+                    // to update when enter
+                    onKeyDown={event => {
+                      if (event.key === 'Enter') {
+                        updateTodo(event, todo.id);
+                      } else if (event.key === 'Escape') {
+                        cancelEdit(event, todo.id);
+                      }
+                    }}
+                    className="todo-item-input"
+                    defaultValue={todo.title}
+                    autoFocus
+                  />
+                )}
               </div>
-              <button onClick={() => deleteTodo(todo.id)} 
-              className="mx-4 bg-red-500">
+              <button
+                onClick={() => deleteTodo(todo.id)}
+                className="mx-4 bg-red-500"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -102,31 +189,6 @@ function Todo() {
               </button>
             </li>
           ))}
-
-          <li className="todo-item-container">
-            <div className="todo-item">
-              <input type="checkbox" />
-              <span className="todo-item-label line-through">
-                Go to Grocery
-              </span>
-              {/* <input type="text" className="todo-item-input" value="Go to Grocery" /> */}
-            </div>
-            <button className="x-button">
-              <svg
-                className="x-button-icon"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </li>
         </ul>
 
         <div className="flex">

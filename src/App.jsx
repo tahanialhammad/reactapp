@@ -34,8 +34,8 @@ class App extends Component {
         <Header logo="React AppS" />
 
         <div class="container mx-auto">
-          <Products />
           <State />
+          <Products />
           <Team />
           <Test />
           {reactMethod}
