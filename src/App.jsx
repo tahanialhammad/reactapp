@@ -12,6 +12,7 @@ import Event from "./components/Event";
 import Products from "./components/Products";
 import Counter from "./components/Counter";
 import Todo from "./components/Todo";
+import TodoRef from "./components/TodoRef";
 
 // was class App extends React.Component {...}
 class App extends Component {
@@ -45,7 +46,8 @@ class App extends Component {
           <Counter />
           <Event />
           {/* https://laracasts.com/series/beginning-react/episodes/3 */}
-          <Todo />
+          {/* <Todo /> */}
+          <TodoRef />
         </div>
 
         <Footer />
