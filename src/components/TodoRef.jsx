@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import NoTodos from './NoTodos';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
@@ -130,11 +130,35 @@ function Todo() {
     }
   }
 
+  // useing ref hock to refrence dom element  , in https://laracasts.com/series/beginning-react/episodes/8?autoplay=true
+
+  const [name, setName] = useState('');
+  const nameInputEl = useRef(null);
 
   return (
     <div className="w-50">
       <div className="w-1/3">
         <h2>Todo App</h2>
+
+        <div className="name-container">
+          <h2>What is your name?</h2>
+          <button className='border border-gray-500' onClick={()=>{console.log(nameInputEl)}}>get ref</button>
+          <form action="#">
+            <input
+              type="text"
+              ref={nameInputEl}
+              className="mb-2 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-700"
+              placeholder="What is your name"
+              value={name}
+              onChange={event => setName(event.target.value)}
+            />
+          </form>
+          {/* show this only if name exist */}
+          {name && <p className="name-label">Hello, {name}</p>}
+        </div>
+
+
+
         {/* pass function as props */}
         <TodoForm addTodo={addTodo} />
         {todos.length > 0 ? (

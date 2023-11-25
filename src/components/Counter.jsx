@@ -16,7 +16,7 @@ function Counter() {
   return (
     <div>
       <h1>Counter</h1>
-      <div class="h-10 w-32">
+      <div className="h-10 w-32">
         <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
           <button
             onClick={decrement}
@@ -24,7 +24,7 @@ function Counter() {
           >
             <span className="m-auto text-2xl font-thin">−</span>
           </button>
-          <span class="text-center bg-gray-300 flex items-center text-gray-700">
+          <span className="text-center bg-gray-300 flex items-center text-gray-700">
             {count}
           </span>
 

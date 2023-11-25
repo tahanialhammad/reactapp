@@ -60,9 +60,9 @@ function TodoList(props) {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeinejoin="round"
               >
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -83,6 +83,7 @@ function TodoList(props) {
       </div>
 
       <div className="flex justify-between items-center gap-2">
+        {/* we need to paas method of filter , selected filter */}
       <TodoFilters
           todosFiltered={props.todosFiltered}
           filter={filter}

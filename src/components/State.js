@@ -11,7 +11,7 @@ class State extends Component {
   render() {
     return (
       <div>
-        <div class="h-screen bg-gray-50 flex items-center">
+        <div classn="h-screen bg-gray-50 flex items-center">
           <section
             className="w-full bg-cover bg-center py-32"
             style={{
