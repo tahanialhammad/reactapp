@@ -26,7 +26,7 @@ class Test extends Component {
       <div>
         <h3
           style={{
-            color: "red",
+            color: "orange",
             fontSize: "40px",
             backgroundColor: "black",
           }}
