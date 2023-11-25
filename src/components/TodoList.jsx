@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TodoItemsRemaining from './TodoItemsRemaining';
+import TodoFilters from './TodoFilters';
 
 function TodoList(props) {
+  // defauilt selected filter and useState 
+  const [filter, setFilter] = useState('all');
+
   return (
     <>
       <ul className="border border-gray-200 rounded overflow-hidden shadow-md">
-        {props.todos.map((todo, index) => (
+        {/* we need to user filter from todofilter */}
+        {/* {props.todos.map((todo, index) => ( */}
+        {props.todosFiltered(filter).map((todo, index) => (
           <li
             key={todo.id}
             className="flex justify-between  px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out"
@@ -45,7 +51,7 @@ function TodoList(props) {
             </div>
             <button
               onClick={() => props.deleteTodo(todo.id)}
-              className="mx-4 bg-red-500"
+              className="mx-4 bg-gray-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +74,7 @@ function TodoList(props) {
       
       <div className="flex justify-between items-center my-4">
         <div>
-          <div className="center rounded-lg bg-pink-500 py-1 px-2 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
+          <div onClick={props.completeAllTodos} className="center rounded-lg bg-gray-500 py-1 px-2 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
             Check All
           </div>
         </div>
@@ -77,16 +83,15 @@ function TodoList(props) {
       </div>
 
       <div className="flex justify-between items-center gap-2">
-        <div>
-          <button className="rounded-lg border border-pink-500 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
-            All
-          </button>
-          <button className="button filter-button">Active</button>
-          <button className="button filter-button">Completed</button>
-        </div>
+      <TodoFilters
+          todosFiltered={props.todosFiltered}
+          filter={filter}
+          setFilter={setFilter}
+        />
+
         <div>
           {/* we can also make it as componentn and call props */}
-          <button onClick={props.clearCompleted} className="rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
+          <button onClick={props.clearCompleted} className="rounded-lg border border-gray-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-gray-200 active:opacity-[0.85]">
             Clear completed
           </button>
         </div>

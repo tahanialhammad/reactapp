@@ -174,7 +174,7 @@ function Todo() {
                   </div>
                   <button
                     onClick={() => deleteTodo(todo.id)}
-                    className="mx-4 bg-red-500"
+                    className="mx-4 bg-orange-500"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

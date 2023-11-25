@@ -109,9 +109,30 @@ function Todo() {
     setTodos([...todos].filter(todo => !todo.isComplete));
   }
 
+  // the as markAsEditing
+  function completeAllTodos() {
+    const updatedTodos = todos.map(todo => {
+      todo.isComplete = true;
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  }
+
+  function todosFiltered(filter) {
+    if (filter === 'all') {
+      return todos;
+    } else if (filter === 'active') {
+      return todos.filter(todo => !todo.isComplete);
+    } else if (filter === 'completed') {
+      return todos.filter(todo => todo.isComplete);
+    }
+  }
+
 
   return (
-    <div className="w-50 bg-gray-200">
+    <div className="w-50">
       <div className="w-1/3">
         <h2>Todo App</h2>
         {/* pass function as props */}
@@ -127,6 +148,8 @@ function Todo() {
             deleteTodo={deleteTodo}
             remaining={remaining}
             clearCompleted={clearCompleted}
+            completeAllTodos={completeAllTodos} 
+            todosFiltered={todosFiltered}
           />
         ) : (
           <NoTodos />
