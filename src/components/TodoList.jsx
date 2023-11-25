@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoItemsRemaining from './TodoItemsRemaining';
 
 function TodoList(props) {
   return (
@@ -64,25 +65,28 @@ function TodoList(props) {
           </li>
         ))}
       </ul>
-      <div className="flex">
+      
+      <div className="flex justify-between items-center my-4">
         <div>
-          <div className="mx-4 center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
+          <div className="center rounded-lg bg-pink-500 py-1 px-2 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
             Check All
           </div>
         </div>
-        <span>3 items remaining</span>
+       
+        <TodoItemsRemaining remaining={props.remaining} />
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex justify-between items-center gap-2">
         <div>
-          <button className="rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
+          <button className="rounded-lg border border-pink-500 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
             All
           </button>
           <button className="button filter-button">Active</button>
           <button className="button filter-button">Completed</button>
         </div>
         <div>
-          <button className="rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
+          {/* we can also make it as componentn and call props */}
+          <button onClick={props.clearCompleted} className="rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85]">
             Clear completed
           </button>
         </div>

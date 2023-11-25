@@ -100,6 +100,16 @@ function Todo() {
     setTodos(updatedTodos);
   }
 
+  // paas this func to list and then to TodoItemsRemaining
+  function remaining() {
+    return todos.filter(todo => !todo.isComplete).length;
+  }
+
+  function clearCompleted() {
+    setTodos([...todos].filter(todo => !todo.isComplete));
+  }
+
+
   return (
     <div className="w-50 bg-gray-200">
       <div className="w-1/3">
@@ -115,6 +125,8 @@ function Todo() {
             updateTodo={updateTodo}
             cancelEdit={cancelEdit}
             deleteTodo={deleteTodo}
+            remaining={remaining}
+            clearCompleted={clearCompleted}
           />
         ) : (
           <NoTodos />
