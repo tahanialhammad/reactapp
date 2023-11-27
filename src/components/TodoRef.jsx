@@ -102,7 +102,7 @@ function Todo() {
 
   // paas this func to list and then to TodoItemsRemaining
   function remaining() {
-    console.log('calculating remaining todos. This is slow.'); //run every time component rerendret
+    // console.log('calculating remaining todos. This is slow.'); //run every time component rerendret ???
     return todos.filter(todo => !todo.isComplete).length;
   }
 
@@ -150,8 +150,7 @@ function Todo() {
   // }, [todos]); //reun efect only when todo updsted , componentDitdUpdate
     }, []); //empty array run when componentDitdMount(refresh page)
 
-    // usememo , caching a value , we can use it bij remaining func
-    const remaining = useMemo(remainingCalculation, [todos]);
+    // usememo , caching a value , we can use it bij remaining func ??? in vidio
 
   return (
     <div className="w-50">

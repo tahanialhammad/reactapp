@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "./Nav";
 
 class Header extends Component {
   render() {
@@ -25,6 +26,7 @@ class Header extends Component {
              <span className="font-bold mx-4">{this.props.logo}</span>
             </a>
           </div>
+          <Nav />
 
           {/* <!-- end logo --> */}
 
