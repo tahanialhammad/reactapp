@@ -1,18 +1,18 @@
 import React, { Component } from "react"; //use class component instead of function
-import logo from "./logo.svg"; //later i waint to use my logo
-import "./App.css";
-import Test from "./components/Test";
-import Social from "./components/Social";
-import Team from "./components/Team";
-import Header from "./components/Header";
-import State from "./components/State";
-import TeamState from "./components/TeamState";
-import Footer from "./components/Footer";
-import Event from "./components/Event";
-import Products from "./components/Products";
-import Counter from "./components/Counter";
-import Todo from "./components/Todo";
-import TodoRef from "./components/TodoRef";
+import logo from "../logo.svg"; //later i waint to use my logo
+import "../App.css";
+import Test from "./Test";
+import Social from "./Social";
+import Team from "./Team";
+
+import State from "./State";
+import TeamState from "./TeamState";
+import Footer from "./Footer";
+import Event from "./Event";
+import Products from "./Products";
+import Counter from "./Counter";
+import Todo from "./Todo";
+import TodoRef from "./TodoRef";
 
 // was class App extends React.Component {...}
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div>
         {/* props in class component */}
-        <Header logo="React AppS" />
+ 
 
         <div class="container mx-auto">
           <State />
