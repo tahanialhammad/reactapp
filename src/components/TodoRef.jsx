@@ -142,7 +142,9 @@ function Todo() {
 
         <div className="name-container">
           <h2>What is your name?</h2>
-          <button className='border border-gray-500' onClick={()=>{console.log(nameInputEl)}}>get ref</button>
+          {/* <button className='border border-gray-500' onClick={()=>{console.log(nameInputEl)}}>get ref</button> */}
+          <button className='border border-gray-500' onClick={()=> nameInputEl.current.focus()}>get ref</button>
+
           <form action="#">
             <input
               type="text"
