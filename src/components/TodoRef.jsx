@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef , useEffect} from 'react';
 import NoTodos from './NoTodos';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
@@ -102,6 +102,7 @@ function Todo() {
 
   // paas this func to list and then to TodoItemsRemaining
   function remaining() {
+    console.log('calculating remaining todos. This is slow.'); //run every time component rerendret
     return todos.filter(todo => !todo.isComplete).length;
   }
 
@@ -135,6 +136,23 @@ function Todo() {
   const [name, setName] = useState('');
   const nameInputEl = useRef(null);
 
+  // use effect, first pram is call bacl , second pram also to sepicfiiy array of dependency to tall you when to run 
+  // it wil ran after refrsh , or state updated, 
+  useEffect(() => {
+    // console.log('use effect running');
+    //empty array run when componentDitdMount(refresh page)
+    nameInputEl.current.focus();
+
+    // componentWillUnmount to return a function , we need to remove aaray
+    return function cleanup() {
+      // console.log('cleaning up');
+    };
+  // }, [todos]); //reun efect only when todo updsted , componentDitdUpdate
+    }, []); //empty array run when componentDitdMount(refresh page)
+
+    // usememo , caching a value , we can use it bij remaining func
+    const remaining = useMemo(remainingCalculation, [todos]);
+
   return (
     <div className="w-50">
       <div className="w-1/3">
@@ -143,7 +161,9 @@ function Todo() {
         <div className="name-container">
           <h2>What is your name?</h2>
           {/* <button className='border border-gray-500' onClick={()=>{console.log(nameInputEl)}}>get ref</button> */}
-          <button className='border border-gray-500' onClick={()=> nameInputEl.current.focus()}>get ref</button>
+          {/* from consol log we see that el is with cuurent so focus must bet for the cuurent el  */}
+          {/* insted of that btn we are using  componentDitdMount to fouce to this input when page frefresh*/}
+          {/* <button className='border border-gray-500' onClick={()=> nameInputEl.current.focus()}>get ref</button> */}
 
           <form action="#">
             <input
