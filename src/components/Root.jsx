@@ -12,6 +12,9 @@ import {
 import App from './App';
 import Header from './Header';
 import About from '../pages/About';
+import Contact from '../pages/Contact';
+import Blog from '../pages/Blog';
+import BlogPost from "../pages/BlogPost";
 
 export default function Root() {
   return (
@@ -22,6 +25,13 @@ export default function Root() {
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            {/* this way not work with Routes, may be old */}
+            {/* <Route exact path="/blog">
+              <Blog />
+            </Route> */}
+             <Route path="/blog/:id" element={<BlogPost />} />
           </Routes>
         </section>
       </div>
