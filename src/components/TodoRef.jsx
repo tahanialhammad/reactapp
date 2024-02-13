@@ -150,7 +150,7 @@ function Todo() {
   // }, [todos]); //reun efect only when todo updsted , componentDitdUpdate
     }, []); //empty array run when componentDitdMount(refresh page)
 
-    // usememo , caching a value , we can use it bij remaining func ??? in vidio
+    // usememo , caching a value , we can use it bij remaining func ??? in vidio //may be vidio 8 not completed
 
   return (
     <div className="w-50">
