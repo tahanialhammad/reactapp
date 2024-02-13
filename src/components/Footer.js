@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+
 import Social from "./Social";
 
 class Footer extends Component {
@@ -9,7 +11,8 @@ class Footer extends Component {
           <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
-                <a href="#" target="_blank" className="flex items-center">
+             
+                <Link href="#" target="_blank" className="flex items-center">
                   <img
                     src="https://flowbite.com/docs/images/logo.svg"
                     className="mr-4 h-10"
@@ -18,7 +21,7 @@ class Footer extends Component {
                   <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                     Flowbite
                   </span>
-                </a>
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
@@ -27,23 +30,23 @@ class Footer extends Component {
                   </h3>
                   <ul>
                     <li className="mb-4">
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Flowbite
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         rel="nofollow"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Tailwind CSS
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -53,22 +56,22 @@ class Footer extends Component {
                   </h3>
                   <ul>
                     <li className="mb-4">
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Github
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Discord
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -78,22 +81,22 @@ class Footer extends Component {
                   </h3>
                   <ul>
                     <li className="mb-4">
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Privacy Policy
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         target="_blank"
                         className="text-gray-600 hover:underline dark:text-gray-400"
                       >
                         Terms &amp; Conditions
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -103,13 +106,13 @@ class Footer extends Component {
             <div className="sm:flex sm:items-center sm:justify-between">
               <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 © 2022{" "}
-                <a
+                <Link
                   href="https://flowbite.com"
                   target="_blank"
                   className="hover:underline"
                 >
                   Flowbite™
-                </a>
+                </Link>
                 . All Rights Reserved.
               </span>
 
