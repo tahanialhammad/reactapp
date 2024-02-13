@@ -71,7 +71,19 @@ function TodoList(props) {
           </li>
         ))}
       </ul>
-      
+    <hr />
+<div>
+  <h2>Custom Hooks </h2>
+  {/* https://laracasts.com/series/beginning-react/episodes/9?autoplay=true */}
+  <button className="rounded-lg border border-gray-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-gray-200 active:opacity-[0.85]">
+    feature on toggle 
+    </button>
+    <button className="rounded-lg border border-gray-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-gray-200 active:opacity-[0.85]">
+    feature tow toggle 
+    </button>
+</div>
+
+    <hr />  
       <div className="flex justify-between items-center my-4">
         <div>
           <div onClick={props.completeAllTodos} className="center rounded-lg bg-gray-500 py-1 px-2 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">

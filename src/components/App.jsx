@@ -35,19 +35,29 @@ class App extends Component {
  
 
         <div className='container mx-auto px-4'>
-          <State />
+           <State />
+          <hr />
           <Products />
+          <hr />
           <Team />
+          <hr />
           <Test />
+          <hr />
           {reactMethod}
+          <hr />
           {siteInfo}
+          <hr />
           <TeamState />
+          <hr />
           <p>simple event listener</p>
           <Counter />
+          <hr />
           <Event />
+          <hr />
           {/* https://laracasts.com/series/beginning-react/episodes/3 */}
           {/* <Todo /> */}
           <TodoRef />
+          <hr />
         </div>
 
         <Footer />
