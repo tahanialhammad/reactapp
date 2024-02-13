@@ -10,11 +10,15 @@ import {
 
 import App from './App';
 import Header from './Header';
+import Footer from './Footer';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Blog from '../pages/Blog';
 import BlogPost from '../pages/BlogPost';
 import NoMatch from '../pages/NoMatch';
+import StateAndProps from "../pages/StateAndProps";
+import EventListener from "../pages/EventListener";
+import TodoApp from "../pages/TodoApp";
 
 export default function Root() {
   // or
@@ -22,6 +26,9 @@ export default function Root() {
     { path: '/', name: 'Home', Component: App, exact: true },
     { path: '/about', name: 'About', Component: About, exact: false },
     { path: '/contact', name: 'Contact', Component: Contact, exact: false },
+    { path: '/state-and-props', name: 'StateAndProps', Component: StateAndProps, exact: false },
+    { path: '/event-listener', name: 'EventListener', Component: EventListener, exact: false },
+    { path: '/todo-app', name: 'TodoApp', Component: TodoApp, exact: false },
     { path: '/blog', name: 'Blog', Component: Blog, exact: true },
     { path: '/blog/:id', name: 'Post', Component: BlogPost, exact: false },
     { path: '*', name: 'No Match', Component: NoMatch, exact: false },
@@ -46,7 +53,10 @@ export default function Root() {
             <Route path="/" element={<App />} />
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />} />
+            <Route path="/state-and-props" element={<StateAndProps />} />
+            <Route path="/event-listener" element={<EventListener />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/todo-app" element={<TodoApp />} />
             {/* this way not work with Routes, may be old */}
             {/* <Route exact path="/blog">
               <Blog />
@@ -56,6 +66,7 @@ export default function Root() {
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </section>
+        <Footer />
       </div>
     </Router>
   );

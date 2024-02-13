@@ -9,9 +9,13 @@ export default function SiteNav() {
   };
   const guestNavLinks = [
     { name: 'Home', route: '/' },
+    { name: 'StateAndProps', route: 'state-and-props' },
+    { name: 'EventListener', route: 'event-listener' },
+    { name: 'TodoApp', route: 'todo-app' },
     { name: 'About', route: 'about' },
     { name: 'Conract', route: 'contact' },
     { name: 'Blog', route: 'posts' },
+    
   ];
 
   return (
