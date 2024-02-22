@@ -19,20 +19,21 @@ import NoMatch from '../pages/NoMatch';
 import StateAndProps from "../pages/StateAndProps";
 import EventListener from "../pages/EventListener";
 import TodoApp from "../pages/TodoApp";
+import Toggle from '../pages/Toggle';
 
 export default function Root() {
   // or
-  const routes = [
-    { path: '/', name: 'Home', Component: App, exact: true },
-    { path: '/about', name: 'About', Component: About, exact: false },
-    { path: '/contact', name: 'Contact', Component: Contact, exact: false },
-    { path: '/state-and-props', name: 'StateAndProps', Component: StateAndProps, exact: false },
-    { path: '/event-listener', name: 'EventListener', Component: EventListener, exact: false },
-    { path: '/todo-app', name: 'TodoApp', Component: TodoApp, exact: false },
-    { path: '/blog', name: 'Blog', Component: Blog, exact: true },
-    { path: '/blog/:id', name: 'Post', Component: BlogPost, exact: false },
-    { path: '*', name: 'No Match', Component: NoMatch, exact: false },
-  ];
+  // const routes = [
+  //   { path: '/', name: 'Home', Component: App, exact: true },
+  //   { path: '/about', name: 'About', Component: About, exact: false },
+  //   { path: '/contact', name: 'Contact', Component: Contact, exact: false },
+  //   { path: '/state-and-props', name: 'StateAndProps', Component: StateAndProps, exact: false },
+  //   { path: '/event-listener', name: 'EventListener', Component: EventListener, exact: false },
+  //   { path: '/todo-app', name: 'TodoApp', Component: TodoApp, exact: false },
+  //   { path: '/blog', name: 'Blog', Component: Blog, exact: true },
+  //   { path: '/blog/:id', name: 'Post', Component: BlogPost, exact: false },
+  //   { path: '*', name: 'No Match', Component: NoMatch, exact: false },
+  // ];
 
   return (
     <Router>
@@ -57,6 +58,7 @@ export default function Root() {
             <Route path="/event-listener" element={<EventListener />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/todo-app" element={<TodoApp />} />
+            <Route path="/Toggle" element={<Toggle />} />
             {/* this way not work with Routes, may be old */}
             {/* <Route exact path="/blog">
               <Blog />
