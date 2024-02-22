@@ -15,6 +15,8 @@ export default function SiteNav() {
     { name: 'About', route: 'about' },
     { name: 'Conract', route: 'contact' },
     { name: 'Blog', route: 'posts' },
+    { name: 'Blog', route: 'posts' },
+    { name: 'Toggle', route: 'Toggle' },
     
   ];
 
