@@ -14,9 +14,10 @@ export default function SiteNav() {
     { name: 'TodoApp', route: 'todo-app' },
     { name: 'About', route: 'about' },
     { name: 'Conract', route: 'contact' },
-    { name: 'Blog', route: 'posts' },
-    { name: 'Blog', route: 'posts' },
+    { name: 'Blog', route: 'blog' },
     { name: 'Toggle', route: 'Toggle' },
+    { name: 'Reddit', route: 'reddit' },
+    
     
   ];
 
