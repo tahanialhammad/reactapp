@@ -17,8 +17,7 @@ export default function SiteNav() {
     { name: 'Blog', route: 'blog' },
     { name: 'Toggle', route: 'Toggle' },
     { name: 'Reddit', route: 'reddit' },
-    
-    
+    { name: 'Posts', route: 'posts' },
   ];
 
   return (

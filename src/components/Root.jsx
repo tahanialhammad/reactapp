@@ -21,6 +21,7 @@ import EventListener from "../pages/EventListener";
 import TodoApp from "../pages/TodoApp";
 import Toggle from '../pages/Toggle';
 import Reddit from "../pages/Reddit";
+import Posts from "../pages/Posts";
 
 export default function Root() {
   // or
@@ -69,6 +70,7 @@ export default function Root() {
             <Route path="*" element={<NoMatch />} />
 {/* Fetching Data from  api */}
             <Route path="/reddit" element={<Reddit />} />
+            <Route path="/posts" element={<Posts />} />
           </Routes>
         </section>
         <Footer />
