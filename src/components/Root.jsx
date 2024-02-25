@@ -20,6 +20,7 @@ import StateAndProps from "../pages/StateAndProps";
 import EventListener from "../pages/EventListener";
 import TodoApp from "../pages/TodoApp";
 import Toggle from '../pages/Toggle';
+import Reddit from "../pages/Reddit";
 
 export default function Root() {
   // or
@@ -66,6 +67,8 @@ export default function Root() {
             <Route path="/blog/:id" element={<BlogPost />} />
             {/* 404 */}
             <Route path="*" element={<NoMatch />} />
+{/* Fetching Data from  api */}
+            <Route path="/reddit" element={<Reddit />} />
           </Routes>
         </section>
         <Footer />
